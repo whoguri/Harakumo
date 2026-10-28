@@ -2,7 +2,7 @@
 
 A developer dashboard that **plans and provisions real Harakumo infrastructure** — edge SQLite databases, storage buckets, vector collections, AI memory stores and edge functions — through the official [`@harakumo/sdk`](https://www.npmjs.com/package/@harakumo/sdk) (v0.4.0), with an approval-gated natural-language assistant.
 
-- **Live demo:** _see the repository description / [Live demo](#live-demo)_
+- **Live demo:** https://launchpad-infra.harakumo.app (Harakumo project #85; Hobby apps sleep when idle, first load takes a few seconds)
 - **Stack:** Next.js 15 App Router · TypeScript · React 19 · Tailwind CSS 4 · zod · `@harakumo/sdk`
 - **Hosted on Harakumo itself** as a Node.js server app (`*.harakumo.app`), so the app dogfoods the platform it manages.
 
@@ -212,7 +212,9 @@ Hobby notes: a server app sleeps after 5 idle minutes (first request wakes it in
 
 ## Live demo
 
-See the URL in the GitHub repository's *About* section. Anonymous visitors see the real inventory and can run the full plan → approve → execute flow as a simulation.
+https://launchpad-infra.harakumo.app — deployed from this repository's `main` branch by Harakumo (Next.js server app, Node 22). Health check: [`/api/health`](https://launchpad-infra.harakumo.app/api/health).
+
+Anonymous visitors see the real inventory (read live through the SDK) and can run the full plan → approve → execute flow as a simulation. The AI Gateway is called on every plan; while the workspace has no AI credit it answers `ai_credits_exhausted` and the UI shows the rules-planner fallback.
 
 ## What I would build next
 
